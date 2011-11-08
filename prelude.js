@@ -907,6 +907,7 @@ function leq(x,y) {
 /**
  * or
  * Logical or
+ * @return bool
  */
 function or(l) {
   if(l == undefined)
@@ -920,6 +921,7 @@ function or(l) {
 /**
  * and
  * Logical and
+ * @return bool
  */
 function and(l) {
   if(l == undefined)
