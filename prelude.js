@@ -753,6 +753,32 @@ function range(x,y) {
   return doRange(x,y);
 }
 
+/**
+ * break_
+ * Stops at the first occurence where p and breaks the list at that point
+ * @return pair
+ */
+function break_(p,l) {
+  var doBreak = function(f,x) {
+    var a = new Array(); var b = new Array();
+    var u = false;
+    for(var i = 0; i < x.length; i++) {
+      if(f(x[i]) == true)
+        u = true;
+      if(u == true)
+        b.push(x[i]);
+      else
+        a.push(x[i]);
+    }
+    return pair(a,b);
+  };
+  if(p == undefined)
+    return break_;
+  if(l == undefined)
+    return function(n){return doBreak(p,n);};
+  return doBreak(p,l);
+}
+
 
 /**
  * END LIST
