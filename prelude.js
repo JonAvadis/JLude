@@ -727,6 +727,32 @@ function any(f,l) {
   return doAny(f,l);
 }
 
+/**
+ * range
+ * Creates a number range
+ * @return list
+ */
+function range(x,y) {
+  var doRange = function(a,b) {
+    var t = new Array();
+    if(a > b) {
+      for(;b<=a;a--)
+        t.push(a);
+    }
+    else {
+      for(;b>=a;a++)
+        t.push(a);
+    }
+    return t;
+  };
+
+  if(x == undefined)
+    return range;
+  if(y == undefined)
+    return function(n){return doRange(x,n);};
+  return doRange(x,y);
+}
+
 
 /**
  * END LIST
@@ -862,7 +888,7 @@ function and(l) {
  */
 $f = flip; $c = compose;
 $m = map; $z = zip;
-$a = fapp;
+$a = fapp; $r = range;
 /**
  * END ALIASES
  */
