@@ -715,3 +715,13 @@ function leq(x,y) {
 /**
  * END COMPARISION
  */
+
+/**
+ * BEGIN ALIASES
+ */
+$f = flip; $c = compose;
+$m = map; $z = zip;
+$a = fapp;
+/**
+ * END ALIASES
+ */
