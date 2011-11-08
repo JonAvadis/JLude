@@ -87,6 +87,11 @@ function snd(p) {
 }
 
 /**
+ * END CHURCH PAIRS
+ */
+
+
+/**
  * BEGIN ARITHMETIC
  */
 
