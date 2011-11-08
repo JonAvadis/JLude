@@ -192,6 +192,32 @@ function lcm(a,b) {
 }
 
 /**
+ * until
+ * Perform f x until p
+ */
+function until(p,f,x) {
+  var doUntil = function(p_,f_,x_) {
+    if(p_(x_))
+      return x_;
+    return doUntil(p_,f_,f_(x_));
+  };
+
+  if(p == undefined)
+    return until;
+  if(f == undefined) {
+    var t = function(n,m) {
+      if(n == undefined)
+        return t;
+      if(m == undefined)
+        return function(z){return doUntil(p,n,z);}
+      return doUntil(p,n,m);
+    };
+    return t;
+  }
+  return doUntil(p,f,x);
+}
+
+/**
  * END MISC
  */
 
@@ -942,3 +968,4 @@ $a = fapp; $r = range;
 /**
  * END ALIASES
  */
+alert(until(flip(gt,100),mul(2),1));
