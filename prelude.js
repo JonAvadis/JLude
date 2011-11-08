@@ -779,6 +779,28 @@ function break_(p,l) {
   return doBreak(p,l);
 }
 
+/**
+ * sum
+ * The sum of all elements in a list
+ * @return sum
+ */
+function sum(l) {
+  if(l == undefined)
+    return sum;
+  return foldl1(add,l);
+}
+
+/**
+ * product
+ * The product of all elements in a list
+ * @return product
+ */
+function product(l) {
+  if(l == undefined)
+    return product;
+  return foldl1(mul,l);
+}
+
 
 /**
  * END LIST
