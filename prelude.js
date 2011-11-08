@@ -861,6 +861,25 @@ function ladd(xs,ys) {
   return doLadd(xs,ys);
 }
 
+/**
+ * replicate
+ * Returns a list containing an element n-times
+ */
+function replicate(n,e) {
+  var doReplicate = function(n_,e_) {
+    var t = new Array();
+    for(;n_>0;n_--)
+      t.push(e_);
+    return t;
+  };
+
+  if(n == undefined)
+    return replicate;
+  if(e == undefined)
+    return function(z){return doReplicate(n,z);};
+  return doReplicate(n,e);
+}
+
 
 /**
  * END LIST
