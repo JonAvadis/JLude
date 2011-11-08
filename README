@@ -1,1 +1,31 @@
-Haskell-like Prelude for Javascript.
+README
+******
+
+This is a little but very powerful javascript 'library'. It offers
+various and mighty functions which allow you to formulate powerful
+and short expressions. These functions are commonly used in
+functional languages.
+
+All functions support currying. This is done by checking arguments
+for undefined, as if a function parameter is not specified in a
+call it is undefined.
+
+
+EXAMPLES
+********
+
+Find the first number 2^n greater than 100.
+  until(flip(gt,100),mul(2),1)
+ => 128
+
+Add 1 to each element in a list.
+  map(add(1),[1,2,3])
+ => [2,3,4]
+
+Apply several functions to the same value.
+  map($a(5),[add(3),mul(3),sub(3),div(3)])
+ => 8,15,-2,0.6
+
+Compose functions.
+  $cm([foldl1(sub),reverse])([1,2,3,4])
+ => -2

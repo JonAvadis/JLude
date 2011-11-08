@@ -1078,3 +1078,4 @@ $cm = composeMultiple;
 /**
  * END ALIASES
  */
+alert($cm([foldl1(sub),reverse])([1,2,3,4]));
