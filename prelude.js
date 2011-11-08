@@ -896,6 +896,46 @@ function iterate(n,f) {
   return doIterate(n,f);
 }
 
+/**
+ * drop
+ * Drop elements from list
+ * @return list
+ */
+function drop(n,l) {
+  var doDrop = function(n_,l_) {
+    var t = new Array();
+    for(;n_<l_.length;n_++)
+      t.push(l_[n_]);
+    return t;
+  };
+
+  if(n == undefined)
+    return drop;
+  if(l == undefined)
+    return function(z){return doDrop(n,z);};
+  return doDrop(n,l);
+}
+
+/**
+ * take
+ * take elements from list
+ * @return list
+ */
+function take(n,l) {
+  var doTake = function(n_,l_) {
+    var t = new Array();
+    for(var i = 0;(i<l_.length)&&(i<n_);i++)
+      t.push(l_[i]);
+    return t;
+  };
+
+  if(n == undefined)
+    return take;
+  if(l == undefined)
+    return function(z){return doTake(n,z);};
+  return doTake(n,l);
+}
+
 
 /**
  * END LIST
