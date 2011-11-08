@@ -52,6 +52,15 @@ function const_(x,y) {
   return x;
 }
 
+// COMPOSE
+function compose(x,y) {
+  if(x == undefined)
+    return compose;
+  if(y == undefined)
+    return function(n){return function(a){return x(n(a));};};
+ return function(a){return x(y(a));};
+}
+
 /**
  * END MISC
  */
