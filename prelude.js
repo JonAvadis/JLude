@@ -880,6 +880,22 @@ function replicate(n,e) {
   return doReplicate(n,e);
 }
 
+/**
+ * iterate
+ * Call a function n-times
+ */
+function iterate(n,f) {
+  var doIterate = function(n_,f_) {
+    return composeMultiple(replicate(n_,f_));
+  };
+
+  if(n == undefined)
+    return iterate;
+  if(f == undefined)
+    return function(z){return doIterate(n,z);};
+  return doIterate(n,f);
+}
+
 
 /**
  * END LIST
