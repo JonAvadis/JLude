@@ -115,6 +115,28 @@ function flip(f,a,b) {
 }
 
 /**
+ * even
+ * Returns true if x is a even number
+ * @return bool
+ */
+function even(x) {
+  if(x == undefined)
+    return even;
+  return (x%2)==0;
+}
+
+/**
+ * odd
+ * Returns true if x is an odd number
+ * @return bool
+ */
+function odd(x) {
+  if(x == undefined)
+    return odd;
+  return(x%2)==1;
+}
+
+/**
  * END MISC
  */
 
