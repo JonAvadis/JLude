@@ -137,6 +137,61 @@ function odd(x) {
 }
 
 /**
+ * abs
+ * Returns the absolute value
+ * @return absolute value
+ */
+function abs(x) {
+  if(x == undefined)
+    return abs;
+  if(x >=0)
+    return x;
+  return -x;
+}
+
+/**
+ * gcd
+ * Returns the greatest common divisor
+ * @return gcd
+ */
+function gcd(a,b) {
+  var doGcd = function(c,d) {
+    var x = abs(c); var y = abs(d);
+    if(y == 0)
+      return x;
+    if(x == 0)
+      if(y == 0)
+        return Infinity;
+    return doGcd(y,x%y);
+  };
+
+  if(a == undefined)
+    return gcd;
+  if(b == undefined)
+    return function(n){return doGcd(a,n);};
+  return doGcd(a,b);
+}
+
+/**
+ * lcm
+ * Returns the least common multiple
+ * @return lcm
+ */
+function lcm(a,b) {
+  var doLcm = function(x,y) {
+    if(x == 0) return 0;
+    if(y == 0) return 0;
+    return (a / (gcd(a,b)))*b;
+  };
+
+  if(a == undefined)
+    return lcm;
+  if(b == undefined)
+    return function(n){return doLcm(a,n);};
+  return doLcm(a,b);
+}
+
+/**
  * END MISC
  */
 
@@ -798,3 +853,5 @@ $a = fapp;
 /**
  * END ALIASES
  */
+alert(gcd(6,-9));
+alert(lcm(2,6));
