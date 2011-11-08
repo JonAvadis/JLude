@@ -596,6 +596,27 @@ function init(l) {
   return t;
 }
 
+/**
+ * filter
+ * Returns only elements fullfilling a criteria
+ * @return elements of list
+ */
+function filter(f,l) {
+  var doFilter = function(p,x) {
+    var t = new Array();
+    for(var i = 0; i < x.length; i++)
+      if(p(x[i]))
+        t.push(x[i]);
+    return t;
+  };
+  
+  if(f == undefined)
+    return filter;
+  if(l == undefined)
+    return function(n){return doFilter(f,n);};
+  return doFilter(f,l);
+}
+
 
 /**
  * END LIST
