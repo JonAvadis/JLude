@@ -75,6 +75,17 @@ function compose(x,y) {
 }
 
 /**
+ * composeMultiple
+ * Compose list of functions
+ * @return a function
+ */
+function composeMultiple(l) {
+  if(l == undefined)
+    return composeMultiple;
+  return foldl1(compose,l);
+}
+
+/**
  * fapp
  * Function application
  *  fapp(x,f) = f(x)
@@ -988,6 +999,7 @@ function and(l) {
 $f = flip; $c = compose;
 $m = map; $z = zip;
 $a = fapp; $r = range;
+$cm = composeMultiple;
 /**
  * END ALIASES
  */
