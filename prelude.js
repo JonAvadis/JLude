@@ -853,5 +853,3 @@ $a = fapp;
 /**
  * END ALIASES
  */
-alert(gcd(6,-9));
-alert(lcm(2,6));
