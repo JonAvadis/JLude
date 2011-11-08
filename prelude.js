@@ -968,4 +968,3 @@ $a = fapp; $r = range;
 /**
  * END ALIASES
  */
-alert(until(flip(gt,100),mul(2),1));
