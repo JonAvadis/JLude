@@ -70,6 +70,29 @@ function fapp(x,f) {
   return f(x);
 }
 
+// FLIP
+function flip(f,a,b) {
+  var doFlip = function(p,x,y) {
+    return p(y,x);
+  };
+
+  if(f == undefined)
+    return flip;
+  if(a == undefined) {
+    var t = function(n,m) {
+      if(n == undefined)
+        return t;
+      if(m == undefined)
+        return function(z){return doFlip(f,n,z);};
+      return doFlip(f,n,m);
+    };
+    return t;
+  }
+  if(b == undefined)
+    return function(z){return doFlip(f,a,z);};
+  return doFlip(f,a,b);
+}
+
 /**
  * END MISC
  */
