@@ -600,3 +600,97 @@ function init(l) {
 /**
  * END LIST
  */
+
+/**
+ * BEGIN COMPARISION
+ */
+
+/**
+ * toBool
+ */
+function toBool(x) {
+  return x ? true : false;
+}
+
+/**
+ * eq
+ * EQual
+ * @return x == y
+ */
+function eq(x,y) {
+  if(x == undefined)
+    return eq;
+  if(y == undefined)
+    return function(n){ return x == n; }
+  return x == y;
+}
+
+/**
+ * neq
+ * Not EQual
+ * @return x != y
+ */
+function neq(x,y) {
+  if(x == undefined)
+    return neq;
+  if(y == undefined)
+    return function(n){ return x != n; }
+  return x != y;
+}
+
+/**
+ * gt
+ * Greater Than
+ * @return x > y
+ */
+function gt(x,y) {
+  if(x == undefined)
+    return gt;
+  if(y == undefined)
+    return function(n){ return x > n; }
+  return x > y;
+}
+
+/**
+ * lt
+ * Less Than
+ * @return x < y
+ */
+function lt(x,y) {
+  if(x == undefined)
+    return lt;
+  if(y == undefined)
+    return function(n){ return x < n; }
+  return x < y;
+}
+
+/**
+ * geq
+ * Greater Or EQual
+ * @return x >= y
+ */
+function geq(x,y) {
+  if(x == undefined)
+    return geq;
+  if(y == undefined)
+    return function(n){ return x >= n; }
+  return x >= y;
+}
+
+/**
+ * leq
+ * Less Or EQual
+ * @return x <= y
+ */
+function leq(x,y) {
+  if(x == undefined)
+    return leq;
+  if(y == undefined)
+    return function(n){ return x <= n; }
+  return x <= y;
+}
+
+
+/**
+ * END COMPARISION
+ */
