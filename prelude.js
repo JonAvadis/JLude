@@ -313,6 +313,19 @@ function mod(a,b) {
 }
 
 /**
+ * pow
+ * POWER!
+ * @ return Math.pow(a,b)
+ */
+function pow(a,b) {
+  if(a == undefined)
+    return pow;
+  if(b == undefined)
+    return function(n){return Math.pow(a,n);};
+  return Math.pow(a,b);
+}
+
+/**
  * END ARITHMETIC
  */
 
