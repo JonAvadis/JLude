@@ -829,6 +829,29 @@ function product(l) {
 
 
 /**
+ * ladd
+ * Concatenate to lists
+ * @return list
+ */
+function ladd(xs,ys) {
+  var doLadd = function(xs,ys) {
+    var t = new Array();
+    for(var i= 0; i < xs.length; i++)
+      t.push(xs[i]);
+    for(var i = 0; i < ys.length; i++)
+      t.push(ys[i]);
+    return t;
+  };
+
+  if(xs == undefined)
+    return ladd;
+  if(ys == undefined)
+    return function(n){return doLadd(xs,n);};
+  return doLadd(xs,ys);
+}
+
+
+/**
  * END LIST
  */
 
