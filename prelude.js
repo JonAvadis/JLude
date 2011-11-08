@@ -717,6 +717,37 @@ function leq(x,y) {
  */
 
 /**
+ * BEGIN LOGIC
+ */
+
+/**
+ * or
+ * Logical or
+ */
+function or(l) {
+  if(l == undefined)
+    return or;
+  for(var i = 0; i < l.length; i++)
+    if(l[i])
+      return true;
+  return false;
+}
+
+/**
+ * and
+ * Logical and
+ */
+function and(l) {
+  if(l == undefined)
+    return and;
+  for(var i = 0; i < l.length; i++)
+    if(l[i] == false)
+      return false;
+  return true;
+}
+
+
+/**
  * BEGIN ALIASES
  */
 $f = flip; $c = compose;
