@@ -36,14 +36,22 @@ THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 
-// ID
+/**
+ * id
+ * The identity function
+ * @return returns its argument
+ */
 function id(x) {
   if(x == undefined)
     return id;
   return x;
 }
 
-// CONST_
+/**
+ * const_
+ * The constant function
+ * @return returns always its second argument
+ */
 function const_(x,y) {
   if(x == undefined)
     return const_;
@@ -52,7 +60,12 @@ function const_(x,y) {
   return x;
 }
 
-// COMPOSE
+/**
+ * compose
+ * Function composition:
+ *  compose(f,g)(x) = f(g(x))
+ * @return a new function composed with the input functions
+ */
 function compose(x,y) {
   if(x == undefined)
     return compose;
@@ -61,7 +74,11 @@ function compose(x,y) {
  return function(a){return x(y(a));};
 }
 
-// FAPP
+/**
+ * fapp
+ * Function application
+ *  fapp(x,f) = f(x)
+ */
 function fapp(x,f) {
   if(x == undefined)
     return f;
@@ -70,7 +87,11 @@ function fapp(x,f) {
   return f(x);
 }
 
-// FLIP
+/**
+ * flip
+ * Flips arguments before calling a given function
+ *  flip(f,a,b) = f(b,a)
+ */
 function flip(f,a,b) {
   var doFlip = function(p,x,y) {
     return p(y,x);
@@ -101,7 +122,11 @@ function flip(f,a,b) {
  * BEGIN CHURCH PAIRS
  */
 
-// PAIR
+/**
+ * pair
+ * Creates a new church-encoded pair
+ * @return a pair
+ */
 function pair(a,b) {
   var createPair = function(x,y) {
     return function(n){return n(x,y);};
@@ -113,14 +138,22 @@ function pair(a,b) {
   return createPair(a,b);
 }
 
-// FST
+/**
+ * fst
+ * Returns the first element of a pair
+ * @return 1st element of pair
+ */
 function fst(p) {
   if(p == undefined)
     return fst;
   return p(function(a,b){return a;});
 }
 
-// SND
+/**
+ * snd
+ * Returns the second element of a pair
+ * @return 2nd element of pair
+ */
 function snd(p) {
   if(p == undefined)
     return snd;
@@ -137,7 +170,11 @@ function snd(p) {
  */
 
 
-// ADD
+/**
+ * add
+ * Performs an addition.
+ * @return a+b
+ */
 function add(a,b) {
   if(a == undefined)
     return add;
@@ -146,7 +183,11 @@ function add(a,b) {
   return a+b;
 }
 
-// SUB
+/**
+ * sub
+ * Performs a subtraction
+ * @return a-b
+ */
 function sub(a,b) {
   if(a == undefined)
     return sub;
@@ -155,7 +196,11 @@ function sub(a,b) {
   return a-b;
 }
 
-// MUL
+/**
+ * mul
+ * Performs a multiplication
+ * @return a*b
+ */
 function mul(a,b) {
   if(a == undefined)
     return mul;
@@ -164,7 +209,11 @@ function mul(a,b) {
   return a*b;
 }
 
-// DIV
+/**
+ * div
+ * Performs a division
+ * @return a/b
+ */
 function div(a,b) {
   if(a == undefined)
     return div;
@@ -173,7 +222,11 @@ function div(a,b) {
   return a/b;
 }
 
-// MOD
+/**
+ * mod
+ * Performs a modulo division
+ * @return a%b
+ */
 function mod(a,b) {
   if(a == undefined)
     return mod;
@@ -190,14 +243,22 @@ function mod(a,b) {
  * BEGIN LIST
  */
 
-// HEAD
+/**
+ * head
+ * Returns the first element of a list
+ * @return element of list
+ */
 function head(l) {
   if(l == undefined)
     return head;
   return l[0];
 }
 
-// TAIL
+/**
+ * tail
+ * Returns all elements but the first of a list
+ * @return elements of list
+ */
 function tail(l) {
   if(l == undefined)
     return tail;
@@ -207,7 +268,11 @@ function tail(l) {
   return t;
 }
 
-// REVERSE
+/**
+ * reverse
+ * Reverses a list
+ * @return list
+ */
 function reverse(l) {
   if(l == undefined)
     return reverse;
@@ -217,7 +282,12 @@ function reverse(l) {
   return t;
 }
 
-// MAP
+/**
+ * map
+ * Applies a function to each element in a list and 
+ * collects the results in a list
+ * @return list
+ */
 function map(f,l) {
   var doMap = function(p,x) {
     var t = new Array();
@@ -233,7 +303,10 @@ function map(f,l) {
   return doMap(f,l);
 }
 
-// FOLDL
+/**
+ * foldl
+ * Performs a left fold with initial value = head(list)
+ */
 function foldl(f,s,l) {
   var doFoldl = function(p,i,x) {
     var r = i;
@@ -259,7 +332,10 @@ function foldl(f,s,l) {
   return doFoldl(f,s,l);
 }
 
-// FOLDL1
+/**
+ * foldl1
+ * Performs a left fold with a given initial value
+ */
 function foldl1(f,l) {
   var doFoldl1 = function(p,x) {
     var r = x[0];
@@ -275,7 +351,10 @@ function foldl1(f,l) {
   return doFoldl1(f,l);
 }
 
-// FOLDR
+/**
+ * foldr
+ * Performs a right fold with initial value = head(list)
+ */
 function foldr(f,s,l) {
   var doFoldr = function(p,i,x) {
     var r = i;
@@ -301,7 +380,10 @@ function foldr(f,s,l) {
   return doFoldr(f,s,l);
 }
 
-// FOLDR1
+/**
+ * foldr1
+ * Performs a right foldl with a givin initial value
+ */
 function foldr1(f,l) {
   var doFoldr1 = function(p,x) {
     var r = x[x.length-1];
@@ -317,7 +399,10 @@ function foldr1(f,l) {
   return doFoldr1(f,l);
 }
 
-// SCANL
+/**
+ * scanl
+ * Like foldl, returns intermediate results and final result in a list
+ */
 function scanl(f,s,l) {
   var doScanl = function(p,i,x) {
     var r = i; var t = new Array();
@@ -346,7 +431,10 @@ function scanl(f,s,l) {
   return doScanl(f,s,l);
 }
 
-// SCANL1
+/**
+ * scanl1
+ * Like foldl1, returns intermediate results and final result in a list
+ */
 function scanl1(f,l) {
   var doScanl1 = function(p,x) {
     var r = x[0]; var t = new Array();
@@ -365,7 +453,10 @@ function scanl1(f,l) {
   return doScanl1(f,l);
 }
 
-// SCANR
+/**
+ * scanr
+ * Like foldr, returns intermediate results and final result in a list
+ */
 function scanr(f,s,l) {
   var doScanr = function(p,i,x) {
     var r = i; var t = new Array();
@@ -394,7 +485,10 @@ function scanr(f,s,l) {
   return doScanr(f,s,l);
 }
 
-// SCANR1
+/**
+ * scanr1
+ * Like foldr1, returns intermediate results and final result in a list
+ */
 function scanr1(f,l) {
   var doScanr1 = function(p,x) {
     var r = x[x.length-1]; var t = new Array();
@@ -413,7 +507,11 @@ function scanr1(f,l) {
   return doScanr1(f,l);
 }
 
-// ZIP
+/**
+ * zip
+ * Zips to lists together
+ * @return list of pairs
+ */
 function zip(xs,ys) {
   var doZip = function(x,y) {
     var t = new Array();
@@ -430,7 +528,12 @@ function zip(xs,ys) {
   return doZip(xs,ys);
 }
 
-// ZIPWITH
+/**
+ * zipWith
+ * Same as zip, but does not use the pair function
+ * Instead you can specify the function to use
+ * @return list
+ */
 function zipWith(f,xs,ys) {
   var doZipWith = function(p,x,y) {
     var t = new Array();
@@ -457,21 +560,33 @@ function zipWith(f,xs,ys) {
   return doZipWith(f,xs,ys);
 }
 
-// LENGTH
+/**
+ * length
+ * Returns the length of a list
+ * @return length
+ */
 function length(l) {
   if(l == undefined)
     return length;
   return l.length;
 }
 
-// LAST
+/**
+ * last
+ * Returns the last element of a list
+ * @return element of list
+ */
 function last(l) {
   if(l == undefined)
     return last;
   return l[l.length-1];
 }
 
-// INIT
+/**
+ * init
+ * Returns all but the last element of a list
+ * @return elements of list
+ */
 function init(l) {
   if(l == undefined)
     return init;
