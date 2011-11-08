@@ -430,6 +430,16 @@ function last(l) {
   return l[l.length-1];
 }
 
+// INIT
+function init(l) {
+  if(l == undefined)
+    return init;
+  var t = new Array();
+  for(var i = 0; i < l.length-1; i++)
+    t.push(l[i]);
+  return t;
+}
+
 
 /**
  * END LIST
