@@ -167,9 +167,9 @@ function tail(l) {
 }
 
 // REVERSE
-function reverse_(l) {
+function reverse(l) {
   if(l == undefined)
-    return reverse_;
+    return reverse;
   var t = new Array();
   for(var i = l.length-1; i >= 0; i--)
     t.push(l[i]);
@@ -333,7 +333,7 @@ function scanr(f,s,l) {
       r = p(x[j],r);
       t.push(r);
     }
-    return reverse_(t);
+    return reverse(t);
   };
 
   if(f == undefined)
@@ -362,7 +362,7 @@ function scanr1(f,l) {
       r = p(x[j],r);
       t.push(r);
     }
-    return reverse_(t);
+    return reverse(t);
   };
 
   if(f == undefined)
@@ -414,6 +414,12 @@ function zipWith(f,xs,ys) {
   if(ys == undefined)
     return function(n){return doZipWith(f,xs,n);}
   return doZipWith(f,xs,ys);
+}
+
+function length(l) {
+  if(l == undefined)
+    return length;
+  return l.length;
 }
 
 
