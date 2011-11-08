@@ -598,7 +598,7 @@ function init(l) {
 
 /**
  * filter
- * Returns only elements fullfilling a criteria
+ * Returns only elements fulfilling a criteria
  * @return elements of list
  */
 function filter(f,l) {
@@ -615,6 +615,26 @@ function filter(f,l) {
   if(l == undefined)
     return function(n){return doFilter(f,n);};
   return doFilter(f,l);
+}
+
+/**
+ * any
+ * Returns true if any element of a list fulfills a criteria
+ * @return bool
+ */
+function any(f,l) {
+  var doAny = function(p,x) {
+    for(var i = 0; i < x.length; i++)
+      if(p(x[i]))
+        return true;
+    return false;
+  };
+
+  if(f == undefined)
+    return any;
+  if(l == undefined)
+    return function(n){return doAny(f,n);};
+  return doAny(f,l);
 }
 
 
