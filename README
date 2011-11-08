@@ -10,6 +10,9 @@ All functions support currying. This is done by checking arguments
 for undefined, as if a function parameter is not specified in a
 call it is undefined.
 
+If you find any bugs please let me know (fmnssun -at- gmail {dot} com).
+If you find this 'library' useful or have feature wishes: Let me know.
+
 
 EXAMPLES
 ********
