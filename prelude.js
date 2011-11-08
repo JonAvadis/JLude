@@ -61,6 +61,15 @@ function compose(x,y) {
  return function(a){return x(y(a));};
 }
 
+// FAPP
+function fapp(x,f) {
+  if(x == undefined)
+    return f;
+  if(f == undefined)
+    return function(n){return n(x);};
+  return f(x);
+}
+
 /**
  * END MISC
  */
