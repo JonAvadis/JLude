@@ -416,10 +416,18 @@ function zipWith(f,xs,ys) {
   return doZipWith(f,xs,ys);
 }
 
+// LENGTH
 function length(l) {
   if(l == undefined)
     return length;
   return l.length;
+}
+
+// LAST
+function last(l) {
+  if(l == undefined)
+    return last;
+  return l[l.length-1];
 }
 
 
