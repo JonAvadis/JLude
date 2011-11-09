@@ -155,4 +155,8 @@ assert(snd(right(add(3),pair(1,2)))==5,"TEST[105] FAILED!");
 
 assert(fst(swap(pair(0,10)))===snd(pair(0,10)),"TEST[106] FAILED!");
 
+assert(head(snd(splitAt(2)([0,1,2,3])))===2,"TEST[107] FAILED!");
+assert(last(fst(splitAt(2)([0,1,2,3])))===1,"TEST[108] FAILED!");
+assert(last(snd(splitAt(2)([0,1,2,3])))===3,"TEST[109] FAILED!");
+
 assert(true===false,"All tests done!");

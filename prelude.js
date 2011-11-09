@@ -1357,6 +1357,31 @@ function group(l) {
 }
 
 /**
+ * splitAt
+ * Split a list at a specified position
+ * @return pair
+ */
+function splitAt(n,l) {
+  var doSplitAt = function(n_,l_) {
+    var a = new Array();
+    var b = new Array();
+    var i = 0;
+    for(;i < l_.length;i++) 
+      if(i < n_)
+        a.push(l_[i]);
+      else
+        b.push(l_[i]);
+    return pair(a,b);
+  };
+
+  if(n == undefined)
+    return splitAt;
+  if(l == undefined)
+    return function(z){return doSplitAt(n,z);};
+  return doSplitAt(n,l);
+}
+
+/**
  * END LIST
  */
 
