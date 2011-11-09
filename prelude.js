@@ -765,6 +765,19 @@ function any(f,l) {
 }
 
 /**
+ * all
+ * Returns true if all elements of a list fulfills a criteria
+ * @return bool
+ */
+function all(f,l) {
+  if(f == undefined)
+    return f;
+  if(l == undefined)
+    return compose(and,map(f));
+  return and(map(f,l));
+}
+
+/**
  * range
  * Creates a number range
  * @return list

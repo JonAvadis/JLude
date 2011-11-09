@@ -112,3 +112,9 @@ assert(words("One two three")[1]==="two","TEST[75] FAILED!");
 
 assert(unlines(lines("One\ntwo\nthree"))==="One\ntwo\nthree","TEST[76] FAILED!");
 assert(lines("One\ntwo\nthree")[1]==="two","TEST[77] FAILED!");
+
+assert(all(eq(5),[5,5,5,5,5])===true,"TEST[78] FAILED!");
+assert(all(eq(5),[5,5,6,5,5])===false,"TEST[79] FAILED!");
+assert(all(eq(5))([5,5,5])===true,"TEST[80] FAILED!");
+
+assert(true===false,"All tests done!");
