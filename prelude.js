@@ -989,6 +989,30 @@ function takeWhile(p,l) {
   return doTakeWhile(p,l);
 }
 
+/**
+ * concat
+ * Flatten lists
+ * @return list
+ */
+function concat(l) {
+  if(l == undefined)
+    return concat;
+  return foldl(ladd,[],l);
+}
+
+/**
+ * concatMap
+ * map with concat
+ * @return list
+ */
+function concatMap(f,l) {
+  if(f == undefined)
+    return concatMap;
+  if(l == undefined)
+    return compose(concat,map(f));
+  return concat(map(f,l));
+}
+
 
 /**
  * END LIST

@@ -101,3 +101,8 @@ assert(head(dropWhile(gt(3),[1,2,3,4,5]))===3,"TEST[66] FAILED!");
 assert(last(dropWhile(gt(3),[1,2,3,4,5]))===5,"TEST[67] FAILED!");
 assert(head(takeWhile(flip(lt,3),[1,2,3,4,5]))===1,"TEST[68] FAILED!");
 assert(last(takeWhile(flip(lt,3),[1,2,3,4,5]))===2,"TEST[69] FAILED!");
+
+assert(concat([[1,2],[3,4]])[2]===3,"TEST[70] FAILED!");
+assert((concatMap(function(n){return [n,n]})([1,2,3]))[2]===2,"TEST[71] FAILED!");
+assert((concatMap(function(n){return [n,n]})([1,2,3]))[0]===1,"TEST[72] FAILED!");
+assert((concatMap(function(n){return [n,n]})([1,2,3]))[1]===1,"TEST[73] FAILED!");
