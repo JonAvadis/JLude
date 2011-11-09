@@ -1106,6 +1106,41 @@ function unlines(l) {
   return concatStr(init(concatStr(map(flip(add,"\n"),l))));
 }
 
+/**
+ * elem
+ * Check if e is an element of a list
+ * @return bool
+ */
+function elem(e,l) {
+  var doElem = function(e_,l_) {
+    var cmp = function(n){return e_===n;};
+    return any(cmp,l_);
+  };
+
+  if(e == undefined)
+    return elem;
+  if(l == undefined)
+    return function(z){return doElem(e,z);};
+  return doElem(e,l);
+}
+
+/**
+ * elem
+ * Check if e is an element of a list
+ * @return bool
+ */
+function notElem(e,l) {
+  var doNotElem = function(e_,l_) {
+    var cmp = function(n){return e_!==n;};
+    return all(cmp,l_);
+  };
+
+  if(e == undefined)
+    return notElem;
+  if(l == undefined)
+    return function(z){return doNotElem(e,z);};
+  return doNotElem(e,l);
+}
 
 /**
  * END LIST

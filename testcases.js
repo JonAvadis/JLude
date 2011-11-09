@@ -120,4 +120,9 @@ assert(all(eq(5))([5,5,5])===true,"TEST[80] FAILED!");
 assert(head(fst(unzip(zip([1,2],[2,1]))))===1,"TEST[81] FAILED!");
 assert(head(snd(unzip(zip([1,2],[2,1]))))===2,"TEST[82] FAILED!");
 
+assert(elem("o","foobar")===true,"TEST[83] FAILED!");
+assert(notElem("z","foobar")===true,"TEST[84] FAILED!");
+assert(elem("z","foobar")===notElem("o","foobar"),"TEST[85] FAILED!");
+
+
 assert(true===false,"All tests done!");
