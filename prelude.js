@@ -309,6 +309,100 @@ function snd(p) {
 }
 
 /**
+ * pairWith
+ * Creates a pair pair(f(x),g(x))
+ * @return pair
+ */
+function pairWith(f,g,x) {
+  var doPairWith = function(f_,g_,x_) {
+    return pair(f_(x_),g_(x_));
+  };
+
+  if(f == undefined)
+    return pairWith;
+  if(g == undefined) {
+    var t = function(n,m) {
+      if(n == undefined)
+        return t;
+      if(m == undefined)
+        return function(z){return doPairWith(f,n,z);};
+      return doPairWith(f,n,m);
+    };
+    return t;
+  }
+  if(x == undefined)
+    return function(z){return doPairWith(f,g,z);};
+  return doPairWith(f,g,x);
+}
+
+/**
+ * both
+ * Applies two functions to both left and right
+ * @return pair
+ */
+function both(f,g,p) {
+  var doBoth = function(f_,g_,p_) {
+    var l = fst(p_);
+    var r = snd(p_);
+    return pair(f_(l),g_(r));
+  };
+
+  if(f == undefined)
+    return doBoth;
+  if(g == undefined) {
+    var t = function(n,m) {
+      if(n == undefined)
+        return t;
+      if(m == undefined)
+        return function(z){return doBoth(f,n,z);};
+      return doBoth(f,n,m);
+    };
+    return t;
+  }
+  if(x == undefined)
+    return function(z){return doBoth(f,g,z);};
+  return doBoth(f,g,p);
+}
+
+/**
+ * left
+ * Applies a function to left
+ * @return pair
+ */
+function left(f,p) {
+  var doLeft = function(f_,p_) {
+    var l = fst(p_);
+    var r = snd(p_);
+    return pair(f_(l),r);
+  };
+
+  if(f == undefined)
+    return left;
+  if(p == undefined)
+    return function(n){return doLeft(f,n);};
+  return doLeft(f,p);
+}
+
+/**
+ * right
+ * Applies a function to right
+ * @return pair
+ */
+function right(f,p) {
+  var doRight = function(f_,p_) {
+    var l = fst(p_);
+    var r = snd(p_);
+    return pair(r,f_(r));
+  };
+
+  if(f == undefined)
+    return right;
+  if(p == undefined)
+    return function(n){return doRight(f,n);};
+  return doRight(f,p);
+}
+
+/**
  * END CHURCH PAIRS
  */
 

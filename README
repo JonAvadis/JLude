@@ -26,6 +26,10 @@ If you want "ba" you have to use concatStr(init("bar")).
 EXAMPLES
 ********
 
+Run Length Encoding
+  var rle = $c(map(pairWith(head,length)),$c(group,sort));
+  rle("Insert your string here");
+
 Find the first number 2^n greater than 100.
   until(flip(gt,100),mul(2),1)
  => 128

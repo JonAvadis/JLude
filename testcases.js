@@ -147,5 +147,10 @@ assert(concatStr(sort("ab"))===concatStr(sort("ba")),"TEST[100] FAILED!");
 assert(map(concatStr)(group(sort("this is me")))[0]==="  ","TEST[101] FAILED!");
 assert(map(concatStr)(group(sort("this is me")))[3]==="ii","TEST[102] FAILED!");
 
+assert(fst(pairWith(add(3))(add(4))(0))===3,"TEST[103] FAILED!");
+assert(snd(pairWith(add(3))(add(4))(0))===4,"TEST[103] FAILED!");
+
+assert(fst(left(add(3),pair(1,2)))===4,"TEST[104] FAILED!");
+assert(snd(right(add(3),pair(1,2)))==5,"TEST[105] FAILED!");
 
 assert(true===false,"All tests done!");
