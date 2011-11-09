@@ -1330,6 +1330,89 @@ function and(l) {
 
 
 /**
+ * BEGIN MAYBE
+ */
+
+function Just(x) {
+  if(x == undefined)
+    return Just;
+
+  var obj = { type : 'just', value : x };
+  return obj;
+}
+
+function Nothing() {
+  var obj = { type : 'nothing' };
+  return obj;
+}
+
+/**
+ * isJust
+ * Returns true if (Just x)
+ * @return bool
+ */
+function isJust(x) {
+  if(x == undefined)
+    return isJust;
+
+  return x.type === 'just';
+}
+
+/**
+ * isNothing
+ * Returns true if (Nothing)
+ * @return bool
+ */
+function isNothing(x) {
+  if(x == undefined)
+    return isNothing;
+
+  return x.type === 'nothing';
+}
+
+/**
+ * fromMaybe
+ * Returns x if (Just x) a if (Nothing)
+ */
+function fromMaybe(a,m) {
+  var doFromMaybe = function(a_,m_) {
+    if(isJust(m_))
+      return m_.value;
+    return a_;
+  };
+
+  if(a == undefined)
+    return fromMaybe;
+  if(m == undefined)
+    return function(n){return doFromMaybe(a,n);};
+  return doFromMaybe(a,m);
+}
+
+/**
+ * lookup
+ * Dictionary-like lookup. (Expects a list of pairs)
+ * @return Maybe
+ */
+function lookup(a,l) {
+  var doLookup = function(a_,l_) {
+    for(var i = 0; i < l_.length; i++)
+      if(fst(l_[i]) == a_)
+        return Just(snd(l_[i]));
+     return Nothing();
+  };
+
+  if(a == undefined)
+    return lookup;
+  if(l == undefined)
+    return function(n){return doLookup(a,n);};
+  return doLookup(a,l);
+}
+
+/**
+ * END MAYBE
+ */
+
+/**
  * BEGIN ALIASES
  */
 $f = flip; $c = compose;

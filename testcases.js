@@ -133,4 +133,11 @@ assert(max(6,6)===min(6,6),"TEST[90] FAILED!");
 assert(minimum([2,1,9,1,8])===1,"TEST[91] FAILED!");
 assert(maximum([2,1,9,1,8])===9,"TEST[92] FAILED!");
 
+assert(isJust(Just(0)),"TEST[93] FAILED!");
+assert(isNothing(Nothing()),"TEST[94] FAILED!");
+assert(isJust(Just(0))!==isNothing(Just(0)),"TEST[95] FAILED!");
+
+assert(fromMaybe(0,lookup("B",zip(["A","B","C"],[1,2,3])))===2,"TEST[96] FAILED!");
+assert(fromMaybe(0,lookup("Z",zip(["A","B","C"],[1,2,3])))===0,"TEST[97] FAILED!");
+
 assert(true===false,"All tests done!");
