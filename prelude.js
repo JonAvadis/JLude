@@ -161,6 +161,40 @@ function abs(x) {
 }
 
 /**
+ * max
+ * Returns the greatest value
+ * @return greatest value
+ */
+function max(x,y) {
+  var doMax = function(x_,y_) {
+    return x_ > y_ ? x_ : y_;
+  };
+
+  if(x == undefined)
+    return max;
+  if(y == undefined)
+    return function(n){return doMax(x,n);};
+  return doMax(x,y);
+}
+
+/**
+ * min
+ * Returns the smallest value
+ * @return smallest value
+ */
+function min(x,y) {
+  var doMin = function(x_,y_) {
+    return x_ < y_ ? x_ : y_;
+  };
+
+  if(x == undefined)
+    return min;
+  if(y == undefined)
+    return function(n){return doMin(x,n);};
+  return doMin(x,y);
+}
+
+/**
  * gcd
  * Returns the greatest common divisor
  * @return gcd

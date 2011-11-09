@@ -124,5 +124,11 @@ assert(elem("o","foobar")===true,"TEST[83] FAILED!");
 assert(notElem("z","foobar")===true,"TEST[84] FAILED!");
 assert(elem("z","foobar")===notElem("o","foobar"),"TEST[85] FAILED!");
 
+assert(max(6,5)===max(5,6),"TEST[86] FAILED!");
+assert(min(6,5)===min(5,6),"TEST[87] FAILED!");
+assert(max(6,5)===6,"TEST[88] FAILED!");
+assert(min(6,5)===5,"TEST[89] FAILED!");
+assert(max(6,6)===min(6,6),"TEST[90] FAILED!");
+
 
 assert(true===false,"All tests done!");
