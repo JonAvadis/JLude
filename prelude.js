@@ -1596,6 +1596,74 @@ function lookup(a,l) {
  */
 
 /**
+ * BEGIN CHARS
+ */
+
+/**
+ * isAlpha
+ * Check if all chars are alpha
+ * @return bool
+ */
+function isAlpha(s) {
+  if(s == undefined)
+    return isAlpha;
+
+  return s.match(/^[a-zA-Z]+$/) ? true : false;
+}
+
+/**
+ * isAlphaNum
+ * Check if all chars are alpha numeric
+ * @return bool
+ */
+function isAlphaNum(s) {
+  if(s == undefined)
+    return isAlphaNum;
+
+  return s.match(/^[a-zA-Z0-9]+$/) ? true : false;
+}
+
+/**
+ * isNumber
+ * Check if all chars are digits
+ * @return bool
+ */
+function isNumber(s) {
+  if(s == undefined)
+    return isNumber;
+
+  return s.match(/^[0-9]+$/) ? true : false;
+}
+
+/**
+ * isUpper
+ * Check if all chars are upper case
+ * @return bool
+ */
+function isUpper(s) {
+  if(s == undefined)
+    return isUpper;
+
+  return s.match(/^[A-Z]+$/) ? true : false;
+}
+
+/**
+ * isLower
+ * Check if all chars are lower case
+ * @return bool
+ */
+function isLower(s) {
+  if(s == undefined)
+    return isLower;
+
+  return s.match(/^[a-z]+$/) ? true : false;
+}
+
+/**
+ * END CHARS
+ */
+
+/**
  * BEGIN ALIASES
  */
 $f = flip; $c = compose;

@@ -159,4 +159,15 @@ assert(head(snd(splitAt(2)([0,1,2,3])))===2,"TEST[107] FAILED!");
 assert(last(fst(splitAt(2)([0,1,2,3])))===1,"TEST[108] FAILED!");
 assert(last(snd(splitAt(2)([0,1,2,3])))===3,"TEST[109] FAILED!");
 
+assert(isAlpha("Foobar")===true,"TEST[110] FAILED!");
+assert(isAlpha("Foo9bar")===false,"TEST[111] FAILED!");
+assert(isAlphaNum("Foo9bar")===true,"TEST[112] FAILED!");
+assert(isAlphaNum("Foo9 bar")===false,"TEST[113] FAILED!");
+assert(isNumber("123")===true,"TEST[114] FAILED!");
+assert(isNumber("12a")===false,"TEST[115] FAILED!");
+assert(isLower("aber")===true,"TEST[116] FAILED!");
+assert(isLower("Aber")===false,"TEST[117] FAILED!");
+assert(isUpper("ABER")===true,"TEST[118] FAILED!");
+assert(isUpper("Aber")===false,"TEST[119] FAILED!");
+
 assert(true===false,"All tests done!");
