@@ -936,6 +936,59 @@ function take(n,l) {
   return doTake(n,l);
 }
 
+/**
+ * dropWhile
+ * Drops until not p
+ * @return list
+ */
+function dropWhile(p,l) {
+  var doDropWhile = function(p_,l_) {
+    var u = true; var t = new Array();
+    for(var i = 0; i < l_.length; i++) {
+      if(u) {
+       if(p_(l_[i]) == false) {
+        u = false;
+       }
+      }
+      if(u === false)
+        t.push(l_[i]);
+    }
+
+    return t;
+  };
+  
+  if(p == undefined)
+    return dropWhile;
+  if(l == undefined)
+    return function(z){return doDropWhile(p,z);};
+  return doDropWhile(p,l);
+}
+
+/**
+ * takeWhile
+ * Takes until not p
+ * @return list
+ */
+function takeWhile(p,l) {
+  var doTakeWhile = function(p_,l_) {
+    var t = new Array();
+    for(var i = 0; i < l_.length; i++) {
+      if(p_(l_[i]) == false) {
+        break;
+      }
+      t.push(l_[i]);
+    }
+
+    return t;
+  };
+  
+  if(p == undefined)
+    return takeWhile;
+  if(l == undefined)
+    return function(z){return doTakeWhile(p,z);};
+  return doTakeWhile(p,l);
+}
+
 
 /**
  * END LIST

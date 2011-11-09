@@ -95,4 +95,9 @@ assert(geq(6,6)===leq(6,6),"TEST[61] FAILED!");
 assert(and([true,true,false])===false,"TEST[62] FAILED!");
 assert(and([true,true,true])===true,"TEST[63] FAILED!");
 assert(or([true,false,false])===true,"TEST[64] FAILED!");
-assert(or([false,false])===false,"TEST[65] FAILED!)";
+assert(or([false,false])===false,"TEST[65] FAILED!");
+
+assert(head(dropWhile(gt(3),[1,2,3,4,5]))===3,"TEST[66] FAILED!");
+assert(last(dropWhile(gt(3),[1,2,3,4,5]))===5,"TEST[67] FAILED!");
+assert(head(takeWhile(flip(lt,3),[1,2,3,4,5]))===1,"TEST[68] FAILED!");
+assert(last(takeWhile(flip(lt,3),[1,2,3,4,5]))===2,"TEST[69] FAILED!");
