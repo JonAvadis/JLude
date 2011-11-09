@@ -153,4 +153,6 @@ assert(snd(pairWith(add(3))(add(4))(0))===4,"TEST[103] FAILED!");
 assert(fst(left(add(3),pair(1,2)))===4,"TEST[104] FAILED!");
 assert(snd(right(add(3),pair(1,2)))==5,"TEST[105] FAILED!");
 
+assert(fst(swap(pair(0,10)))===snd(pair(0,10)),"TEST[106] FAILED!");
+
 assert(true===false,"All tests done!");

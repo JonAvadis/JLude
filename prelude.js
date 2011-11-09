@@ -385,7 +385,7 @@ function left(f,p) {
 
 /**
  * right
- * Applies a function to right
+ * Apply a function to right
  * @return pair
  */
 function right(f,p) {
@@ -400,6 +400,20 @@ function right(f,p) {
   if(p == undefined)
     return function(n){return doRight(f,n);};
   return doRight(f,p);
+}
+
+/**
+ * swap
+ * Swap left/right
+ * @return pair
+ */
+function swap(p) {
+  if(p == undefined)
+    return swap;
+
+  var l = fst(p);
+  var r = snd(p);
+  return pair(r,l);
 }
 
 /**
