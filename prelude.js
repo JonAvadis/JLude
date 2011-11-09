@@ -1001,6 +1001,17 @@ function concat(l) {
 }
 
 /**
+ * concatStr
+ * Flatten lists
+ * @return list
+ */
+function concatStr(l) {
+  if(l == undefined)
+    return concatStr;
+  return foldl(add,"",l);
+}
+
+/**
  * concatMap
  * map with concat
  * @return list
@@ -1011,6 +1022,63 @@ function concatMap(f,l) {
   if(l == undefined)
     return compose(concat,map(f));
   return concat(map(f,l));
+}
+
+/**
+ * split
+ * Split a string using a delimiter
+ * @return list
+ */
+function split(s,d) {
+  if(s == undefined)
+    return split;
+  if(d == undefined)
+    return function(n){return s.split(n);};
+  return s.split(d);
+}
+
+/**
+ * words
+ * Break a string into words
+ * @return list
+ */
+function words(s) {
+  if(s == undefined)
+    return s;
+  return split(s," ");
+}
+
+/**
+ * unwords
+ * Concatenate words
+ * @return list
+ */
+function unwords(l) {
+  if(l == undefined)
+    return l;
+  return concatStr(init(concatStr(map(flip(add," "),l))));
+}
+
+/**
+ * lines
+ * Breaks a string into lines
+ * @return list
+ */
+function lines(s) {
+  if(s == undefined)
+    return lines;
+  return split(s,"\n");
+}
+
+/**
+ * unlines
+ * Concatenate lines
+ * @return list
+ */
+function unlines(l) {
+  if(l == undefined)
+    return unlines;
+  return concatStr(init(concatStr(map(flip(add,"\n"),l))));
 }
 
 

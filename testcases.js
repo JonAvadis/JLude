@@ -106,3 +106,9 @@ assert(concat([[1,2],[3,4]])[2]===3,"TEST[70] FAILED!");
 assert((concatMap(function(n){return [n,n]})([1,2,3]))[2]===2,"TEST[71] FAILED!");
 assert((concatMap(function(n){return [n,n]})([1,2,3]))[0]===1,"TEST[72] FAILED!");
 assert((concatMap(function(n){return [n,n]})([1,2,3]))[1]===1,"TEST[73] FAILED!");
+
+assert(unwords(words("One two three"))==="One two three","TEST[74] FAILED!");
+assert(words("One two three")[1]==="two","TEST[75] FAILED!");
+
+assert(unlines(lines("One\ntwo\nthree"))==="One\ntwo\nthree","TEST[76] FAILED!");
+assert(lines("One\ntwo\nthree")[1]==="two","TEST[77] FAILED!");

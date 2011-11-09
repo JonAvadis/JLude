@@ -13,6 +13,15 @@ call it is undefined.
 If you find any bugs please let me know (fmnssun -at- gmail {dot} com).
 If you find this 'library' useful or have feature wishes: Let me know.
 
+IMPORTANT
+*********
+
+Javascript has no strict type system nor are Javascript lists homogenous.
+This has advantages and disadvantages. List functions like init
+accept every type which supports x[i]. Keep in mind, that strings in Javascripts
+are not lists (or arrays). init("bar") is not "ba" but ["b","a"] instead.
+If you want "ba" you have to use concatStr(init("bar")).
+
 
 EXAMPLES
 ********
