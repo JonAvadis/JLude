@@ -1382,6 +1382,23 @@ function splitAt(n,l) {
 }
 
 /**
+ * span
+ * A combination of takeWhile and dropWhile
+ * @return pair of lists
+ */
+function span(p,l) {
+  var doSpan = function(p_,l_) {
+    return pair(takeWhile(p_,l_),dropWhile(p_,l_));
+  };
+  
+  if(p == undefined)
+    return span;
+  if(l == undefined)
+    return function(n){return doSpan(p,n);};
+  return doSpan(p,l);
+}
+
+/**
  * END LIST
  */
 

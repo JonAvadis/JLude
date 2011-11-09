@@ -170,4 +170,7 @@ assert(isLower("Aber")===false,"TEST[117] FAILED!");
 assert(isUpper("ABER")===true,"TEST[118] FAILED!");
 assert(isUpper("Aber")===false,"TEST[119] FAILED!");
 
+assert(concatStr(fst(span(isNumber)("123abc456")))==="123","TEST[120] FAILED!");
+assert(concatStr(snd(span(isNumber)("123abc456")))==="abc456","TEST[121] FAILED!");
+
 assert(true===false,"All tests done!");
