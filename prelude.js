@@ -656,6 +656,18 @@ function zip(xs,ys) {
 }
 
 /**
+ * unzip
+ * unzips lists
+ * @return pair of lists
+ */
+function unzip(l) {
+  if(l == undefined)
+    return unzip;
+
+  return pair(map(fst,l),map(snd,l));
+}
+
+/**
  * zipWith
  * Same as zip, but does not use the pair function
  * Instead you can specify the function to use

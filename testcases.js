@@ -117,4 +117,7 @@ assert(all(eq(5),[5,5,5,5,5])===true,"TEST[78] FAILED!");
 assert(all(eq(5),[5,5,6,5,5])===false,"TEST[79] FAILED!");
 assert(all(eq(5))([5,5,5])===true,"TEST[80] FAILED!");
 
+assert(head(fst(unzip(zip([1,2],[2,1]))))===1,"TEST[81] FAILED!");
+assert(head(snd(unzip(zip([1,2],[2,1]))))===2,"TEST[82] FAILED!");
+
 assert(true===false,"All tests done!");
