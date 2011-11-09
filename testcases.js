@@ -130,5 +130,7 @@ assert(max(6,5)===6,"TEST[88] FAILED!");
 assert(min(6,5)===5,"TEST[89] FAILED!");
 assert(max(6,6)===min(6,6),"TEST[90] FAILED!");
 
+assert(minimum([2,1,9,1,8])===1,"TEST[91] FAILED!");
+assert(maximum([2,1,9,1,8])===9,"TEST[92] FAILED!");
 
 assert(true===false,"All tests done!");

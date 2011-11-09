@@ -1177,6 +1177,28 @@ function notElem(e,l) {
 }
 
 /**
+ * minimum
+ * Returns the smallest element in a list
+ * @return smallest element
+ */
+function minimum(l) {
+  if(l == undefined)
+    return minimum;
+  return foldl1(min,l);
+}
+
+/**
+ * maximum
+ * Returns the biggest element in a list
+ * @return biggest element
+ */
+function maximum(l) {
+  if(l == undefined)
+    return maximum;
+  return foldl1(max,l);
+}
+
+/**
  * END LIST
  */
 
