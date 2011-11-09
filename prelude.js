@@ -1399,6 +1399,32 @@ function span(p,l) {
 }
 
 /**
+ * partition
+ * Splits a list according to a predicate.
+ *  Left: All elements fulfilling the predicate
+ *  Right: All elements not fulfilling the predicate
+ * @return pair of lists
+ */
+function partition(p,l) {
+  var doPartition = function(p_,l_) {
+    var a = new Array();
+    var b = new Array();
+    for(var i = 0; i < l_.length; i++)
+      if(p_(l_[i]))
+        a.push(l_[i]);
+      else
+        b.push(l_[i]);
+    return pair(a,b);
+  };
+
+  if(p == undefined)
+    return partition;
+  if(l == undefined)
+    return function(n){return doPartition(p,n);};
+  return doPartition(p,l);
+}
+
+/**
  * END LIST
  */
 

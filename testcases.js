@@ -173,4 +173,9 @@ assert(isUpper("Aber")===false,"TEST[119] FAILED!");
 assert(concatStr(fst(span(isNumber)("123abc456")))==="123","TEST[120] FAILED!");
 assert(concatStr(snd(span(isNumber)("123abc456")))==="abc456","TEST[121] FAILED!");
 
+assert(head(fst(partition(lt(3),[1,2,3,4,5])))===4,"TEST[122] FAILED!");
+assert(head(snd(partition(lt(3),[1,2,3,4,5])))===1,"TEST[123] FAILED!");
+assert(last(snd(partition(lt(3),[1,2,3,4,5])))===3,"TEST[124] FAILED!");
+assert(last(fst(partition(lt(3),[1,2,3,4,5])))===5,"TEST[125] FAILED!");
+
 assert(true===false,"All tests done!");
