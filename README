@@ -22,6 +22,17 @@ accept every type which supports x[i]. Keep in mind, that strings in Javascripts
 are not lists (or arrays). init("bar") is not "ba" but ["b","a"] instead.
 If you want "ba" you have to use concatStr(init("bar")).
 
+ABOUT THE AUTHOR
+****************
+
+My name is Roman Muentener and I'm a student at the Zurich Hochschule for applied sciences.
+
+HELP
+****
+
+You can help me by giving me feedback, finding and eliminating bugs, spreading the word
+about JLude or of course, you can already help me by just using JLude.
+
 
 EXAMPLES
 ********
