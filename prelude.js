@@ -1327,7 +1327,7 @@ function sort(l) {
 }
 
 /**
- * groups
+ * group
  * Group near same elements in a list
  * @return grouped list
  */
