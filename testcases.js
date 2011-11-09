@@ -140,4 +140,8 @@ assert(isJust(Just(0))!==isNothing(Just(0)),"TEST[95] FAILED!");
 assert(fromMaybe(0,lookup("B",zip(["A","B","C"],[1,2,3])))===2,"TEST[96] FAILED!");
 assert(fromMaybe(0,lookup("Z",zip(["A","B","C"],[1,2,3])))===0,"TEST[97] FAILED!");
 
+assert(head(sort([13,4,9,8]))===4,"TEST[98] FAILED!");
+assert(last(sort([13,4,9,8]))===13,"TEST[99] FAILED!");
+assert(concatStr(sort("ab"))===concatStr(sort("ba")),"TEST[100] FAILED!");
+
 assert(true===false,"All tests done!");

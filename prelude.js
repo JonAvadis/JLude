@@ -1199,6 +1199,26 @@ function maximum(l) {
 }
 
 /**
+ * sort
+ * Sort a list
+ * @return sorted list
+ */
+function sort(l) {
+  //Yes, this is quicksort.
+  if(l == undefined)
+    return sort;
+  
+  if(length(l)===0)
+    return [];
+
+  var p = head(l);
+  l = tail(l);
+  var lesser = filter(flip(lt,p),l);
+  var greater = filter(flip(geq,p),l);
+  return ladd(ladd(sort(lesser),[p]),sort(greater));
+}
+
+/**
  * END LIST
  */
 
