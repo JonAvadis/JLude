@@ -144,4 +144,8 @@ assert(head(sort([13,4,9,8]))===4,"TEST[98] FAILED!");
 assert(last(sort([13,4,9,8]))===13,"TEST[99] FAILED!");
 assert(concatStr(sort("ab"))===concatStr(sort("ba")),"TEST[100] FAILED!");
 
+assert(map(concatStr)(group(sort("this is me")))[0]==="  ","TEST[101] FAILED!");
+assert(map(concatStr)(group(sort("this is me")))[3]==="ii","TEST[102] FAILED!");
+
+
 assert(true===false,"All tests done!");

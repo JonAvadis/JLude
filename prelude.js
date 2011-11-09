@@ -1219,6 +1219,36 @@ function sort(l) {
 }
 
 /**
+ * groups
+ * Group near same elements in a list
+ * @return grouped list
+ */
+function group(l) {
+  if(l == undefined)
+    return group;
+
+  var p = head(l);
+  l = tail(l);
+  var t = new Array();
+  t.push(p);
+  var r = new Array();
+  for(var i = 0; i < l.length; i++) {
+    if(p == l[i])
+      t.push(l[i]);
+    else {
+      p = l[i];
+      r.push(t);
+      t = new Array();
+      t.push(p);
+    }
+  }
+
+  r.push(t);
+
+  return r;
+}
+
+/**
  * END LIST
  */
 
