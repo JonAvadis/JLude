@@ -1529,6 +1529,88 @@ function nub(l) {
 }
 
 /**
+ * intersect
+ * Returns the intersection of two lists
+ * @return list
+ */
+function intersect(a,b) {
+  var doIntersect = function(x,y) {
+    var t = new Array();
+    for(var i = 0; i < x.length; i++)
+      if(elem(x[i],y))
+        t.push(x[i]);
+    return nub(t);
+  };
+
+  if(a == undefined)
+    return intersect;
+  if(b == undefined)
+    return function(n){return doIntersect(a,n);};
+  return doIntersect(a,b);
+}
+
+/**
+ * union
+ * Returns the union of two lists
+ * @return list
+ */
+function union(a,b) {
+  var doUnion = function(x,y) {
+    return nub(ladd(x,y));
+  };
+
+  if(a == undefined)
+    return union;
+  if(b == undefined)
+    return function(n){return doUnion(a,n);};
+  return doUnion(a,b);
+}
+
+/**
+ * difference
+ * Returns the difference of two lists
+ * @return list
+ */
+function difference(a,b) {
+  var doDifference = function(x,y) {
+    for(var i = 0; i < y.length; i++)
+      x = remove(y[i],x);
+    return x;
+  };
+
+  if(a == undefined)
+    return difference;
+  if(b == undefined)
+    return function(n){return doDifference(a,n);};
+  return doDifference(a,b);
+}
+
+/**
+ * remove
+ * Delete an element from a list
+ * @return list
+ */
+function remove(e,l) {
+  var doRemove = function(e_,l_) {
+    var r = false;
+    var t = new Array();
+    for(var i = 0; i < l_.length; i++)
+      if(r === false)
+        if(l_[i]===e) {
+          r = true;
+        } else t.push(l_[i]);
+      else t.push(l_[i]);
+    return t;
+  };
+
+  if(e == undefined)
+    return remove;
+  if(l == undefined)
+    return function(n){return doRemove(e,n);};
+  return doRemove(e,l);
+}
+
+/**
  * END LIST
  */
 
