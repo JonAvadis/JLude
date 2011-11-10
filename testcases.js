@@ -213,4 +213,18 @@ assert(lcmp(difference([1,2,3,4],[5]),[1,2,3,4]),"TEST[149] FAILED!");
 
 assert(lcmp(insert(4,[1,2,3,5]),[1,2,3,4,5]),"TEST[150] FAILED!");
 
+
+var t = concatStr(fromMaybe("",stripPrefix("http://","http://facebook.com")));
+assert(t==="facebook.com","TEST[151] FAILED!");
+t = stripPrefix("https://","http://facebook.com")
+assert(isNothing(t),"TEST[152] FAILED!");
+
+t = concatStr(fromMaybe("",stripSuffix(".com","http://facebook.com")));
+assert(t==="http://facebook","TEST[153] FAILED!");
+t = stripPrefix(".de","http://facebook.com");
+assert(isNothing(t),"TEST[153] FAILED!");
+
+assert(empty([])===true,"TEST[154] FAILED!");
+assert(empty([1])===false,"TEST[155] FAILED!");
+
 assert(true===false,"All tests done!");

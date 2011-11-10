@@ -1638,6 +1638,55 @@ function insert(e,l) {
 }
 
 /**
+ * stripPrefix
+ * Remove a prefix from a list.
+ * @return Maybe
+ */
+function stripPrefix(e,l) {
+  var doStripPrefix = function(e_,l_) {
+    if(isPrefixOf(e_,l_)===false)
+      return Nothing();
+    return Just(drop(e_.length,l_));
+  };
+
+  if(e == undefined)
+    return stripPrefix;
+  if(l == undefined)
+    return function(n){return doStripPrefix(e,n);};
+  return doStripPrefix(e,l);
+}
+
+/**
+ * stripSuffix
+ * Remove a suffix from a list.
+ * @return Maybe
+ */
+function stripSuffix(e,l) {
+  var doStripSuffix = function(e_,l_) {
+    if(isSuffixOf(e_,l_)===false)
+      return Nothing();
+    return Just(take(l_.length-e_.length,l_));
+  };
+
+  if(e == undefined)
+    return stripSuffix;
+  if(l == undefined)
+    return function(n){return doStripSuffix(e,n);};
+  return doStripSuffix(e,l);
+}
+
+/**
+ * empty
+ * Returns true if a list is empty
+ * @return bool
+ */
+function empty(l) {
+  if(l == undefined)
+    return empty;
+  return l.length===0;
+}
+
+/**
  * END LIST
  */
 
