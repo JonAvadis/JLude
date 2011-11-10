@@ -200,4 +200,6 @@ assert(isInfixOf([1,3,4],[1,3])===false,"TEST[140] FAILED!");
 assert(lcmp(intersperse(1,[1]),[1]),"TEST[141] FAILED!");
 assert(lcmp(intersperse(1,[0,0,0]),[0,1,0,1,0]),"TEST[142] FAILED!");
 
+assert(lcmp(nub([1,3,3,7]),[1,3,7]),"TEST[143] FAILED!");
+
 assert(true===false,"All tests done!");

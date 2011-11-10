@@ -1511,6 +1511,24 @@ function intersperse(e,l) {
 }
 
 /**
+ * nub
+ * Eliminate duplicates
+ * @return list
+ */
+function nub(l) {
+  if(l == undefined)
+    return l;
+
+  var t = new Array();
+
+  for(var i = 0; i < l.length; i++)
+    if(notElem(l[i],t))
+      t.push(l[i]);
+
+  return t;
+}
+
+/**
  * END LIST
  */
 
