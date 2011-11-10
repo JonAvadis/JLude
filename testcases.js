@@ -227,4 +227,9 @@ assert(isNothing(t),"TEST[153] FAILED!");
 assert(empty([])===true,"TEST[154] FAILED!");
 assert(empty([1])===false,"TEST[155] FAILED!");
 
+assert(lcmp(head(transpose([[1,2],[3,4]])),[1,3])===true,"TEST[156] FAILED!");
+assert(lcmp(last(transpose([[1,2,6],[3,4,5],[9,8]])),[6,5]),"TEST[157] FAILED!");
+
+
+
 assert(true===false,"All tests done!");

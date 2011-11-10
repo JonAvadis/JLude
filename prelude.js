@@ -1687,6 +1687,28 @@ function empty(l) {
 }
 
 /**
+ * transpose
+ * Transpose a matrix
+ * @return list
+ */
+function transpose(l) {
+  if(l == undefined)
+    return transpose;
+  var t = new Array();
+  var r = new Array();
+  for(var i = 0; i < l.length; i++) {
+    for(var j = 0; j < l.length; j++) {
+      if(j < l[i].length)
+        t.push(l[j][i]);
+    }
+    r.push(t);
+    t = new Array();
+  }
+
+  return r;
+}
+
+/**
  * END LIST
  */
 
