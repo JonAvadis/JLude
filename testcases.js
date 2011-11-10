@@ -178,4 +178,9 @@ assert(head(snd(partition(lt(3),[1,2,3,4,5])))===1,"TEST[123] FAILED!");
 assert(last(snd(partition(lt(3),[1,2,3,4,5])))===3,"TEST[124] FAILED!");
 assert(last(fst(partition(lt(3),[1,2,3,4,5])))===5,"TEST[125] FAILED!");
 
+assert(lcmp([1,3,3,7],[1,3,3,7])===true,"TEST[126] FAILED!");
+assert(lcmp([1,3,3,7],[1,3,4,7])===false,"TEST[127] FAILED!");
+assert(lcmp([1,3,3,7],[1,3,7])===false,"TEST[128] FAILED!");
+
+
 assert(true===false,"All tests done!");

@@ -1517,6 +1517,32 @@ function leq(x,y) {
   return x <= y;
 }
 
+/**
+ * lcmp
+ * List comparision
+ * @return bool
+ */
+function lcmp(a,b) {
+  var doLcmp = function(l1,l2) {
+    var ll1 = l1.length; 
+    var ll2 = l2.length;
+
+    if(ll1 !== ll2)
+      return false;
+    for(var i = 0; i < ll1; i++)
+      if(l1[i] != l2[i])
+        return false;
+    return true;
+  };
+
+  if(a == undefined)
+    return lcmp;
+  if(b == undefined)
+    return function(n){ return doLcmp(a,n);};
+  return doLcmp(a,b);
+}
+
+
 
 /**
  * END COMPARISION
