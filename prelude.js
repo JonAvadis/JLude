@@ -1486,6 +1486,31 @@ function isInfixOf(a,l) {
 }
 
 /**
+ * intersperse
+ * Add an element between every two elements of a list
+ * @return list
+ */
+function intersperse(e,l) {
+  var doIntersperse = function(e_,l_) {
+    if(l_.length < 2)
+      return l_;
+    var t = new Array(); var ll = l_.length;
+    for(var i = 0; i <= ll-2; i++) {
+      t.push(l_[i]); t.push(e_);
+    }
+    t.push(l_[ll-1]);
+
+    return t;
+  };
+
+  if(e == undefined)
+    return intersperse;
+  if(l == undefined)
+    return function(n){return doIntersperse(e,n);};
+  return doIntersperse(e,l);
+}
+
+/**
  * END LIST
  */
 
