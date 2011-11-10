@@ -211,4 +211,6 @@ assert(lcmp(difference([1,3,3],[1,3,7]),[3]),"TEST[147] FAILED!");
 assert(lcmp(difference([1,2,3,4],[2,3]),[1,4]),"TEST[148] FAILED!");
 assert(lcmp(difference([1,2,3,4],[5]),[1,2,3,4]),"TEST[149] FAILED!");
 
+assert(lcmp(insert(4,[1,2,3,5]),[1,2,3,4,5]),"TEST[150] FAILED!");
+
 assert(true===false,"All tests done!");

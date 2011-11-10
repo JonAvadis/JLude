@@ -1611,6 +1611,33 @@ function remove(e,l) {
 }
 
 /**
+ * insert
+ * Insert an element into an ordered list
+ * @return list
+ */
+function insert(e,l) {
+  var doInsert = function(e_,l_) {
+    var t = new Array();
+    var r = false;
+    for(var i = 0; i < l_.length; i++)
+      if(r===false)
+        if(e_<=l_[i]) {
+          t.push(e_);
+          t.push(l_[i]);
+          r = true;
+        } else t.push(l_[i]);
+      else t.push(l_[i]);
+    return t;
+  };
+
+  if(e == undefined)
+    return insert;
+  if(l == undefined)
+    return function(n){return doInsert(e,n);};
+  return doInsert(e,l);
+}
+
+/**
  * END LIST
  */
 
