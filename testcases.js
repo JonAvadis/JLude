@@ -182,5 +182,19 @@ assert(lcmp([1,3,3,7],[1,3,3,7])===true,"TEST[126] FAILED!");
 assert(lcmp([1,3,3,7],[1,3,4,7])===false,"TEST[127] FAILED!");
 assert(lcmp([1,3,3,7],[1,3,7])===false,"TEST[128] FAILED!");
 
+assert(isPrefixOf([1,3],[1,3,3,7])===true,"TEST[129] FAILED!");
+assert(isPrefixOf([1,2],[1,3,3,7])===false,"TEST[130] FAILED!");
+assert(isPrefixOf([1,3,3,7],[1,3,3,7])===true,"TEST[131] FAILED!");
+assert(isPrefixOf([1,3,3,7,8],[1,3,3,7])===false,"TEST[132] FAILED!");
+
+assert(isSuffixOf([3,7],[1,3,3,7])===true,"TEST[133] FAILED!");
+assert(isSuffixOf([3],[1,3,3,7])===false,"TEST[134] FAILED!");
+assert(isSuffixOf([1,3,3,7],[1,3,3,7])===true,"TEST[135] FAILED!");
+assert(isSuffixOf([1,3,3,7,8],[1,3,3,7])===false,"TEST[136] FAILED!");
+
+assert(isInfixOf([3,3],[1,3,3,7])===true,"TEST[137] FAILED!");
+assert(isInfixOf([3,4],[1,3,3,7])===false,"TEST[138] FAILED!");
+assert(isInfixOf([1,3,3,7],[1,3,3,7])===true,"TEST[139] FAILED!");
+assert(isInfixOf([1,3,4],[1,3])===false,"TEST[140] FAILED!");
 
 assert(true===false,"All tests done!");

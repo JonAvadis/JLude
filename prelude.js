@@ -1425,6 +1425,67 @@ function partition(p,l) {
 }
 
 /**
+ * isPrefixOf
+ * Check if a list is a prefix of another list
+ * @return bool
+ */
+function isPrefixOf(a,l) {
+  var doIsPrefixOf = function(a_,l_) {
+    if(a_.length > l_.length)
+      return false;
+
+    return lcmp(a_,take(a_.length,l_));
+  };
+
+  if(a == undefined)
+    return isPrefixOf;
+  if(l == undefined)
+    return function(n){return doIsPrefixOf(a,n);};
+  return doIsPrefixOf(a,l);
+}
+
+/**
+ * isSuffixOf
+ * Check if a list is a suffix of another list
+ * @return bool
+ */
+function isSuffixOf(a,l) {
+  var doIsSuffixOf = function(a_,l_) {
+    if(a_.length > l_.length)
+      return false;
+
+    return lcmp(a_,drop(l_.length-a_.length,l_));
+  };
+
+  if(a == undefined)
+    return isSuffixOf;
+  if(l == undefined)
+    return function(n){return doIsSuffixOf(a,n);};
+  return doIsSuffixOf(a,l);
+}
+
+/**
+ * isInfixOf
+ * Check if a list is contained by another list
+ * @return bool
+ */
+function isInfixOf(a,l) {
+  var doIsInfixOf = function(a_,l_) {
+    if(a_.length > l_.length)
+      return false;
+    if(isPrefixOf(a_,l_)===true)
+      return true;
+    return doIsInfixOf(a_,tail(l_));
+  };
+
+  if(a == undefined)
+    return isInfixOf;
+  if(l == undefined)
+    return function(n){return doIsInfixOf(a,n);};
+  return doIsInfixOf(a,l);
+}
+
+/**
  * END LIST
  */
 
