@@ -234,4 +234,8 @@ assert(concatStr(last(splitS("-.","723-825.13")))==="13","TEST[158] FAILED!");
 assert(concatStr(head(splitS("-.","723-825.13")))==="723","TEST[159] FAILED!");
 assert(concatStr((splitS("-.","723-825.13")[1]))==="825","TEST[160] FAILED!");
 
+assert(lcmp([1,2,3],$_$(reverse,id)([1,2,3])),"TEST[161] FAILED!");
+assert($$_(add(3),add,add(3),0)===6,"TEST[162] FAILED!");
+assert(_$$(add,add,3,0)===6,"TEST[163] FAILED!");
+
 assert(true===false,"All tests done!");
