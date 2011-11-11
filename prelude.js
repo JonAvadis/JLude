@@ -1739,7 +1739,7 @@ function splitS(e,l) {
   if(e == undefined)
     return splitS;
   if(l == undefined)
-    return function(n){return doSplitS(s,n);};
+    return function(n){return doSplitS(e,n);};
   return doSplitS(e,l);
 }
 
