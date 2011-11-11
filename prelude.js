@@ -1709,6 +1709,41 @@ function transpose(l) {
 }
 
 /**
+ * splitS
+ * Special split
+ * @return list
+ */
+function splitS(e,l) {
+  var doSplitS = function(p,x) {
+    var t = new Array();
+    var r = new Array();
+    var j = 0; var term = false;
+    for(var i = 0; i < x.length; i++) {
+      if(term == true) {
+        t.push(x[i]);
+        continue;
+      }
+      if(x[i] == p[j]) {
+        r.push(t);
+        t = new Array();
+        j++;
+        if(j >= p.length)
+          term = true;
+      }
+      else t.push(x[i]);
+    }
+    r.push(t);
+    return r;
+  };
+
+  if(e == undefined)
+    return splitS;
+  if(l == undefined)
+    return function(n){return doSplit(s,n);};
+  return doSplitS(e,l);
+}
+
+/**
  * END LIST
  */
 

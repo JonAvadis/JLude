@@ -230,6 +230,8 @@ assert(empty([1])===false,"TEST[155] FAILED!");
 assert(lcmp(head(transpose([[1,2],[3,4]])),[1,3])===true,"TEST[156] FAILED!");
 assert(lcmp(last(transpose([[1,2,6],[3,4,5],[9,8]])),[6,5]),"TEST[157] FAILED!");
 
-
+assert(concatStr(last(splitS("-.","723-825.13")))==="13","TEST[158] FAILED!");
+assert(concatStr(head(splitS("-.","723-825.13")))==="723","TEST[159] FAILED!");
+assert(concatStr((splitS("-.","723-825.13")[1]))==="825","TEST[160] FAILED!");
 
 assert(true===false,"All tests done!");
