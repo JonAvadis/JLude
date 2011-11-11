@@ -2061,3 +2061,49 @@ $cm = composeMultiple;
 /**
  * END ALIASES
  */
+
+/**
+ * WEIRDO HELPERS
+ * NOTE: THEY DO NOT SUPPORT CURRYING LIKE THE OTHER FUNCTIONS.
+ * THEY SUPPORT CURRYING. BUT THE REAL CURRYING. WITH ALL OTHER
+ * FUNCTIONS YOU CAN WRITE foobar(x)(f,z) WITH THESE FUNCTIONS
+ * YOU CAN ONLY WRITE foobar(x)(f)(z)! SO KEEP THAT IN MIND!
+ */
+$_$ = function(f,g) {
+  if(f == undefined)
+    return $_$;
+  if(g == undefined)
+    return function(n){return $_$(f,n);};
+  
+  return $cm([f,g,f]);
+};
+
+$$_ = function(f,c,g,x) {
+  if(f == undefined)
+    return $$_;
+  if(c == undefined)
+    return function(n){return $$_(f,n);};
+  if(g == undefined)
+    return function(n){return $$_(f,c,n);};
+  if(x == undefined)
+    return function(n){return $$_(f,c,g,n);};
+  
+  return c(f(x),g(x));
+};
+
+_$$ = function(f,g,x,y) {
+  if(f == undefined)
+    return _$$;
+  if(g == undefined)
+    return function(n){return _$$(f,n);};
+  if(x == undefined)
+    return function(n){return _$$(f,g,n);};
+  if(y == undefined)
+    return function(n){return _$$(f,g,x,n);};
+  
+  return $c(f(x),g(x))(y);
+}
+
+/**
+ * WEIRDO HELPERS
+ */
