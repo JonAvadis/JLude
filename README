@@ -32,7 +32,9 @@ HELP
 ****
 
 You can help me by giving me feedback, finding and eliminating bugs, spreading the word
-about JLude or of course, you can already help me by just using JLude.
+about JLude or of course, you can already help me by just using JLude. Submitting testcases
+would also be a great help. Javascript is dynamic which means that a hell lot of errors can
+only be detected at runtime under very specific circumstances.
 
 
 EXAMPLES
