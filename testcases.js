@@ -238,4 +238,6 @@ assert(lcmp([1,2,3],$_$(reverse,id)([1,2,3])),"TEST[161] FAILED!");
 assert($$_(add(3),add,add(3),0)===6,"TEST[162] FAILED!");
 assert(_$$(add,add,3,0)===6,"TEST[163] FAILED!");
 
+assert(lcmp(rotate([1,2,3,4]),[4,1,2,3]),"TEST[164] FAILED!");
+
 assert(true===false,"All tests done!");

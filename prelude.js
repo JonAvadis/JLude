@@ -1743,6 +1743,13 @@ function splitS(e,l) {
   return doSplitS(e,l);
 }
 
+function rotate(l) {
+  if(l == undefined)
+    return l;
+
+  return ladd([last(l)],init(l));
+}
+
 /**
  * END LIST
  */
