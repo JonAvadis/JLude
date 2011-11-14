@@ -1745,7 +1745,7 @@ function splitS(e,l) {
 
 function rotate(l) {
   if(l == undefined)
-    return l;
+    return rotate;
 
   return ladd([last(l)],init(l));
 }
