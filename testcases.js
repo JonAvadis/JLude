@@ -240,4 +240,6 @@ assert(_$$(add,add,3,0)===6,"TEST[163] FAILED!");
 
 assert(lcmp(rotate([1,2,3,4]),[4,1,2,3]),"TEST[164] FAILED!");
 
+assert(count(2,[1,2,3,2,3])===2,"TEST[165] FAILED!");
+
 assert(true===false,"All tests done!");

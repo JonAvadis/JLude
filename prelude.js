@@ -1750,6 +1750,22 @@ function rotate(l) {
   return ladd([last(l)],init(l));
 }
 
+function count(e,l) {
+  var doCount = function(p,x) {
+    var j = 0;
+    for(var i = 0; i < x.length;i++)
+      if(x[i]===p)
+        j++;
+    return j;
+  };
+
+  if(e == undefined)
+    return count;
+  if(l == undefined)
+    return function(n){return doCount(e,n);};
+  return doCount(e,l);
+}
+
 /**
  * END LIST
  */
