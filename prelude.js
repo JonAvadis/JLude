@@ -48,6 +48,17 @@ function id(x) {
 }
 
 /**
+ * call
+ * Call a function
+ * @return whatever the function returns
+ */
+function call(x) {
+  if(x == undefined)
+    return call;
+  return x();
+}
+
+/**
  * const_
  * The constant function
  * @return returns always its second argument

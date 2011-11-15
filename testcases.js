@@ -246,4 +246,8 @@ assert(lcmp([1,2,3,4,5],merge([2,4],[1,3,5])),"TEST[166] FAILED!");
 
 assert(last(insert(5,[1,2,3,4]))===5,"TEST[167] FAILED!");
 
+var f = function(){return 5;};
+var g = function(){return 6;};
+assert(lcmp(map(call)([f,g]),[5,6]),"TEST[168] FAILED!");
+
 assert(true===false,"All tests done!");
