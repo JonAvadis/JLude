@@ -242,4 +242,6 @@ assert(lcmp(rotate([1,2,3,4]),[4,1,2,3]),"TEST[164] FAILED!");
 
 assert(count(2,[1,2,3,2,3])===2,"TEST[165] FAILED!");
 
+assert(lcmp([1,2,3,4,5],merge([2,4],[1,3,5])),"TEST[166] FAILED!");
+
 assert(true===false,"All tests done!");

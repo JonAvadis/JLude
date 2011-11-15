@@ -1627,6 +1627,8 @@ function insert(e,l) {
           r = true;
         } else t.push(l_[i]);
       else t.push(l_[i]);
+    if(r === false)
+      t.push(e_);
     return t;
   };
 
@@ -1774,6 +1776,29 @@ function count(e,l) {
   if(l == undefined)
     return function(n){return doCount(e,n);};
   return doCount(e,l);
+}
+
+/**
+ * merge
+ * Merge two lists to an ordered list
+ * @return list
+ */
+function merge(x,y) {
+  var doMerge = function(a,b) {
+    var t = new Array();
+    var i;
+    for(i=0;i<a.length;i++)
+      t.push(a[i]);
+    for(i=0;i<b.length;i++)
+      t = insert(b[i],t);
+    return t;
+  };
+
+  if(x == undefined)
+    return merge;
+  if(y == undefined)
+    return function(n){return doMerge(x,n);};
+  return doMerge(x,y);
 }
 
 /**
