@@ -1813,6 +1813,40 @@ function merge(x,y) {
 }
 
 /**
+ * subseq
+ * Returns a subsequence of a list
+ * @return list
+ */
+function subseq(i,e,l) {
+  var doSubseq = function(a,b,x) {
+    var t = new Array();
+    if(a>b)
+      return t;
+    if(b>x.length)
+      return t;
+    for(;a<b;a++)
+      t.push(x[a]);
+    return t;
+  };
+
+  if(i == undefined)
+    return subseq;
+  if(e == undefined) {
+    var t = function(n,m) {
+      if(n == undefined)
+        return t;
+      if(m == undefined)
+        return function(z){return doSubseq(i,n,z);};
+      return doSubseq(i,n,m);
+    };
+    return t;
+  }
+  if(l == undefined)
+    return function(n){return doSubseq(i,e,n);};
+  return doSubseq(i,e,l);
+}
+
+/**
  * END LIST
  */
 

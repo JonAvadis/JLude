@@ -250,4 +250,6 @@ var f = function(){return 5;};
 var g = function(){return 6;};
 assert(lcmp(map(call)([f,g]),[5,6]),"TEST[168] FAILED!");
 
+assert(lcmp(subseq(1)(3,[1,2,3,4,5]),[2,3]),"TEST[169] FAILED!");
+
 assert(true===false,"All tests done!");
