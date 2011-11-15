@@ -1743,6 +1743,11 @@ function splitS(e,l) {
   return doSplitS(e,l);
 }
 
+/**
+ * rotate
+ * Rotate the list so that the last element is no at the front
+ * @return list
+ */
 function rotate(l) {
   if(l == undefined)
     return rotate;
@@ -1750,6 +1755,11 @@ function rotate(l) {
   return ladd([last(l)],init(l));
 }
 
+/**
+ * count
+ * Count how many times an element is in a list
+ * @return float
+ */
 function count(e,l) {
   var doCount = function(p,x) {
     var j = 0;
